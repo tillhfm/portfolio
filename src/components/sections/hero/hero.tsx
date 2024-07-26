@@ -9,7 +9,7 @@ const HeroSection = () => {
    return (
       <section id="home" className='h-full'>
 
-         <div className="w-full h-full flex items-center justify-center p-14">
+         <div className="w-full h-full flex items-center justify-center p-12">
             <div>
                
                <h1 className="flex justify-center text-center text-4xl font-bold">

@@ -17,11 +17,11 @@ const HeroSection = () => {
                </h1>
                <div className='flex justify-center'>
                <div className='font-medium pt-2'>
-                  - Till, tillhfm.de
+                  - Till, @hm.till
                </div>
                </div>
                <div className="w-full flex justify-center text-lg space-x-6 mt-6">
-                  <Link href="https://instagram.com/trxsson" target="_blank" className='flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors'>
+                  <Link href="https://instagram.com/hm.till" target="_blank" className='flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors'>
                      <InstagramIcon style={{ width: '16px' }} /> <span>Instagram</span>
                   </Link>
                   <Dialog>

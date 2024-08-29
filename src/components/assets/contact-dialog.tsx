@@ -12,6 +12,7 @@ import {
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useToast } from "@/components/ui/use-toast"
+import { DATA } from "../../data/data"
 
 const ContactDialog = () => {
    const { toast } = useToast();
@@ -37,12 +38,12 @@ const ContactDialog = () => {
                <Link
                   className={buttonVariants({ variant: "secondary" }) + " space-x-2"}
                   id="email"
-                  href="mailto:mail@tillhfm.de"
+                  href={`mailto:${DATA.emailAddress}`}
                >
-                  <Mail className="h-4 w-4" /> <span>mail@tillhfm.de</span>
+                  <Mail className="h-4 w-4" /> <span>{DATA.emailAddress}</span>
                </Link>
             </div>
-            <Button type="submit" size="icon" variant="default" onClick={() => handleCopy('mail@tillhfm.de', 'Email-Adresse')} className="px-3">
+            <Button type="submit" size="icon" variant="default" onClick={() => handleCopy(DATA.emailAddress, 'Email-Adresse')} className="px-3">
                <span className="sr-only">Email-Adresse Kopieren</span>
                <Copy className="h-4 w-4" />
             </Button>
@@ -55,12 +56,12 @@ const ContactDialog = () => {
                <Link
                   className={buttonVariants({ variant: "secondary" }) + " space-x-2"}
                   id="phone"
-                  href="tel:+491626061774"
+                  href={`tel:${DATA.phoneNumber.replaceAll(" ", "")}`}
                >
-                  <Phone className="h-4 w-4" /> <span>+49 162 6061774</span>
+                  <Phone className="h-4 w-4" /> <span>{DATA.phoneNumber}</span>
                </Link>
             </div>
-            <Button type="submit" size="icon" variant="default" onClick={() => handleCopy('+491626061774', 'Telefonnummer')} className="px-3">
+            <Button type="submit" size="icon" variant="default" onClick={() => handleCopy(DATA.phoneNumber.replaceAll(" ", ""), 'Telefonnummer')} className="px-3">
                <span className="sr-only">Telefonnummer Kopieren</span>
                <Copy className="h-4 w-4" />
             </Button>

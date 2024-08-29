@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import Head from "next/head";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
          <Head>
             <link
                rel="icon"
@@ -26,8 +27,13 @@ export default function RootLayout({
                sizes="<generated>"
             />
          </Head>
-         <body className={inter.className}>{children}</body>
-         <Toaster />
+         <body className={cn("min-h-screen bg-background antialiased !px-6 flex justify-center",
+            inter.className)} >
+            <div className="max-w-2xl w-full h-full">
+               {children}
+            </div>
+            <Toaster />
+         </body>
       </html>
    );
 }

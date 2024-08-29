@@ -65,7 +65,7 @@ export const DATA: {
          ],
          title: "Jr.-Softwareentwickler (Festanstellung)",
          logoSrc: "/xima.jpg",
-         start: "Februar 2024",
+         start: "Feb. 2024",
          description:
             "Junior-Softwareentwickler für Fullstack-Anwendungen in Java Enterprise Umgebungen.",
       },
@@ -100,7 +100,7 @@ export const DATA: {
          ],
          title: "Entwicklungsleiter, Systemadministrator",
          logoSrc: "/dds.jpeg",
-         start: "Januar 2024",
+         start: "Jan. 2024",
          description:
             "Mitwirkung an der Entwicklung der v3, Dokumentation und Eventplanung.",
       },
@@ -117,7 +117,7 @@ export const DATA: {
          ],
          title: "Praktikant (Softwareentwickler)",
          logoSrc: "/adesso.png",
-         start: "April 2023",
+         start: "Apr. 2023",
          end: "Mai 2023",
          description:
             "Entwicklung einer Fullstack-Webapp mit SpringBoot und Thymeleaf.",
@@ -133,8 +133,8 @@ export const DATA: {
          ],
          title: "Stellv. Entwicklungsleiter",
          logoSrc: "/jeracraft.jpg",
-         start: "Dezember 2022",
-         end: "Juni 2023",
+         start: "Dez. 2022",
+         end: "Jun. 2023",
          description:
             "Entwicklung und stellvertretende Leitung der Entwicklung am Minecraft Netzwerk des YouTubers Jeracraft.",
       },
@@ -149,8 +149,8 @@ export const DATA: {
          ],
          title: "Aushilfe Veranstaltungstechnik",
          logoSrc: "/lti.svg",
-         start: "Juli 2023",
-         end: "August 2023",
+         start: "Jul. 2023",
+         end: "Aug. 2023",
          description:
             "Wartung & Logistik von Veranstaltungstechnik und Auf- und Abbau von Events.",
       },

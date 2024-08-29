@@ -63,21 +63,23 @@ export const ResumeCard = ({
                   <AvatarFallback>{altText[0]}</AvatarFallback>
                </Avatar>
             </div>
-            <div className="flex-grow ml-4 items-center flex-col group">
-               <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                     <h3 className="inline-flex items-center  font-semibold leading-none text-xs sm:text-sm">
-                        <span className="">
-                        {title}
-                        </span>
+            <div className="flex-grow ml-4 items-center flex-col group w-full">
+               <CardHeader className="w-full">
+                  <div className="flex items-center justify-between gap-x-2 text-base w-full overflow-hidden">
+                     <div className="flex max-w-[48%]">
+                        <h3 className="flex items-center font-semibold leading-none text-xs sm:text-sm max-w-[90%]">
+                           <span className="w-min max-w-[1000px] whitespace-nowrap overflow-hidden text-ellipsis">
+                              {title}
+                           </span>
+                        </h3>
                         <ChevronRightIcon
                            className={cn(
-                              "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
+                              "flex-shrink-0 size-4 translate-x-0 transform opacity-100 transition-all duration-300 ease-out group-hover:translate-x-1",
                               isExpanded ? "rotate-90" : "rotate-0"
                            )}
                         />
-                     </h3>
-                     <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right w-max">
+                     </div>
+                     <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right w-[50%]">
                         {period}
                      </div>
                   </div>
@@ -99,13 +101,13 @@ export const ResumeCard = ({
                   >
                      {description}
                      <div className="flex space-x-3">
-                     {references && references.map((ref, x) => (
-                        <Button size="sm" key={x} variant="link" asChild className="mt-2" onClick={(e) => e.stopPropagation()}>
-                           <Link href={ref.url} target="_blank" className="flex w-fit items-center space-x-1">
-                              {ref.icon} <span>{ref.name}</span>
-                           </Link>
-                        </Button>
-                     ))}
+                        {references && references.map((ref, x) => (
+                           <Button size="sm" key={x} variant="link" asChild className="mt-2" onClick={(e) => e.stopPropagation()}>
+                              <Link href={ref.url} target="_blank" className="flex w-fit items-center space-x-1">
+                                 {ref.icon} <span>{ref.name}</span>
+                              </Link>
+                           </Button>
+                        ))}
                      </div>
                   </motion.div>
                )}

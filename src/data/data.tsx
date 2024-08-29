@@ -93,7 +93,7 @@ export const DATA: {
          company: "dreamsdontsleep",
          references: [
             {
-               url: "https://instagram.com/dreamsdontsleep",
+               url: "https://instagram.com/dreamsdontsleeep",
                name: "Instagram",
                icon: <InstagramIcon className="size-4" />
             }
@@ -102,7 +102,7 @@ export const DATA: {
          logoSrc: "/dds.jpeg",
          start: "Jan. 2024",
          description:
-            "Mitwirkung an der Entwicklung der v3, Dokumentation und Eventplanung.",
+            "Systemadminitration und Leitung der Entwicklung einer React-Anwendung.",
       },
    ],
    pastWork: [
@@ -152,7 +152,7 @@ export const DATA: {
          start: "Jul. 2023",
          end: "Aug. 2023",
          description:
-            "Wartung & Logistik von Veranstaltungstechnik und Auf- und Abbau von Events.",
+            "Wartung & Logistik von Veranstaltungstechnik und Auf- & Abbau von Events.",
       },
    ],
 }

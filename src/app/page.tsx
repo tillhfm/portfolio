@@ -149,7 +149,7 @@ export default function Home() {
                         Kontaktiere mich
                      </h2>
                      <div className="space-y-4 mx-auto max-w-[600px] text-muted-foreground sm:text-lg/relaxed md:text-xl/relaxed">
-                        <div>Lust zu reden? Kontaktiere mich gerne via Email / Telefon oder schreib' mir eine DM auf Instagram.</div>
+                        <div>Lust zu reden? Kontaktiere mich gerne via Email / Telefon oder schreib&apos; mir eine DM auf Instagram.</div>
 
                         <div className="flex justify-center items-center space-x-3">
                            <Dialog>

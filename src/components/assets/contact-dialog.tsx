@@ -26,7 +26,7 @@ const ContactDialog = () => {
    };
 
    return (
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md" onOpenAutoFocus={(e) => e.preventDefault()}>
          <DialogHeader>
             <DialogTitle>Kontaktiere mich via</DialogTitle>
          </DialogHeader>

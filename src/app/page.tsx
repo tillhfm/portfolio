@@ -3,7 +3,7 @@ import React from "react"
 import { ArrowUpRight, Mail } from "lucide-react"
 import { Dialog, DialogTrigger } from "@/components/ui/dialog"
 import ContactDialog from "@/components/assets/contact-dialog"
-import { InstagramIcon } from "@/components/assets/icons"
+import { GithubIcon, InstagramIcon } from "@/components/assets/icons"
 import { DATA } from "../data/data"
 import BlurFade from "@/components/magicui/blur-fade"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -19,7 +19,12 @@ export default function Home() {
    return (
       <main className="flex flex-col min-h-[100dvh] space-y-12">
          <section id="header" className="">
-            <div className="flex justify-end sm:text-lg space-x-6 pt-10 sm:pt-12">
+            <div className="flex justify-end space-x-6 pt-10 sm:pt-12">
+            <BlurFade delay={1.25}>
+                  <Link href={DATA.githubUrl} target="_blank" className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
+                     <GithubIcon className="size-4" /> <span>Github</span>
+                  </Link>
+               </BlurFade>
                <BlurFade delay={1.4}>
                   <Link href={DATA.instagramUrl} target="_blank" className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
                      <InstagramIcon className="size-4" /> <span>Instagram</span>

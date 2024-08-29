@@ -100,7 +100,7 @@ export const ResumeCard = ({
                      {description}
                      <div className="flex space-x-3">
                      {references && references.map((ref, x) => (
-                        <Button size="sm" variant="link" asChild className="mt-2" onClick={(e) => e.stopPropagation()}>
+                        <Button size="sm" key={x} variant="link" asChild className="mt-2" onClick={(e) => e.stopPropagation()}>
                            <Link href={ref.url} target="_blank" className="flex w-fit items-center space-x-1">
                               {ref.icon} <span>{ref.name}</span>
                            </Link>

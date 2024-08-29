@@ -66,7 +66,7 @@ export const ResumeCard = ({
             <div className="flex-grow ml-4 items-center flex-col group w-full">
                <CardHeader className="w-full">
                   <div className="flex items-center justify-between gap-x-2 text-base w-full overflow-hidden">
-                     <div className="flex max-w-[48%]">
+                     <div className="flex items-center w-[48%] sm:w-[65%]">
                         <h3 className="flex items-center font-semibold leading-none text-xs sm:text-sm max-w-[90%]">
                            <span className="w-min max-w-[1000px] whitespace-nowrap overflow-hidden text-ellipsis">
                               {title}
@@ -79,7 +79,7 @@ export const ResumeCard = ({
                            )}
                         />
                      </div>
-                     <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right w-[50%]">
+                     <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right w-[50%] sm:w-[30%]">
                         {period}
                      </div>
                   </div>

@@ -8,8 +8,31 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-   title: "Till Hoffmann — @trxsson",
-   description: "Webseite von Till Hoffmann aus Dresden.",
+   title: "Till Hoffmann — tillhfm.de",
+   description: "Portfolio von Till Hoffmann aus Dresden.",
+   openGraph: {
+      title: "Till Hoffmann — tillhfm.de",
+      description: "Portfolio von Till Hoffmann aus Dresden.",
+      url: "https://tillhfm.de/",
+      siteName: "Till Hoffmann — tillhfm.de",
+      locale: "de_DE",
+      type: "website",
+    },
+   robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    twitter: {
+      title: "Till Hoffmann — tillhfm.de",
+      card: "summary_large_image",
+    },
 };
 
 export default function RootLayout({

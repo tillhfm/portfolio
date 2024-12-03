@@ -9,6 +9,8 @@ export const DATA: {
    phoneNumber: string;
    dateOfBirth: string;
    skills: string[];
+   frameworks: string[];
+   tools: string[];
    experience: {
       institution: string,
       references: {
@@ -31,15 +33,22 @@ export const DATA: {
    dateOfBirth: "2007/07/11",
    skills: [
       "Java",
-      "Go",
+      "TypeScript",
+      "Python",
       "Kotlin",
+      "Go",
+   ],
+   frameworks: [
+      "SpringBoot",
+      "JSF",
       "React",
       "Next.js",
-      "Typescript",
-      "Node.js",
+   ],
+   tools: [
       "Docker",
       "git",
-      "Linux"
+      "Linux",
+      "Jetbrains IDEs"
    ],
    experience: [
       {

@@ -53,11 +53,10 @@ export default function Home() {
                   </BlurFade>
                   <BlurFade delay={0.6} duration={1.2} className="">
                      <p className="max-w-[280px] sm:max-w-[400px] sm:text-xl">
-                        Ein Jr.-Softwareentwickler und Schüler aus&nbsp;
+                        Jr.-Softwareentwickler und Abiturient aus&nbsp;
                         <Link href="https://maps.app.goo.gl/vFse1x3xYQm23W2u5" target="_blank" className="inline-block w-fit bg-secondary pr-1 rounded items-center">
                            <ArrowUpRight className="inline stroke-[1.5]" />Dresden, SN.
                         </Link>
-
                      </p>
                   </BlurFade>
                </div>

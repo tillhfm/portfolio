@@ -20,7 +20,7 @@ export default function Home() {
       <main className="flex flex-col min-h-[100dvh] space-y-12">
          <section id="header" className="">
             <div className="flex justify-end space-x-6 pt-10 sm:pt-12">
-            <BlurFade delay={1.25}>
+            <BlurFade delay={1.65}>
                   <Link href={DATA.githubUrl} target="_blank" className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
                      <GithubIcon className="size-4" /> <span>Github</span>
                   </Link>
@@ -30,7 +30,7 @@ export default function Home() {
                      <InstagramIcon className="size-4" /> <span>Instagram</span>
                   </Link>
                </BlurFade>
-               <BlurFade delay={1.65}>
+               <BlurFade delay={1.25}>
                   <Dialog>
                      <DialogTrigger asChild>
                         <span className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">

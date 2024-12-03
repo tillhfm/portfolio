@@ -75,7 +75,7 @@ export default function Home() {
             </BlurFade>
             <BlurFade delay={1.15}>
                <p className="mt-1 prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-                  Mit ca. 12 Jahren habe ich angefangen, an Minecraft Mehrspieler-Servern zu arbeiten, woraus sich meine Leidenschaft zur Informatik entwickelte. Mittlerweile bin ich in vielen Feldern der IT erfahren. Zusätzlich mache ich Musik (Hip Hop), spiele Gitarre, starte eine kleine Modemarke und arbeite an verschiedenen Projekten, während ich mein Abitur mache. Aktuell bin ich {age} Jahre alt.
+                  Im Alter von ca. 12 Jahren habe ich angefangen, an Minecraft Mehrspieler-Servern zu arbeiten, woraus sich meine Leidenschaft zur Informatik entwickelte. Mittlerweile bin ich in vielen Feldern derer erfahren. Nebenbei mache ich Musik, beschäftige mich mit händischer Modeherstellung und arbeite an verschiedenen Projekten, während ich mein Abitur mache. Aktuell bin ich {age} Jahre alt.
                </p>
             </BlurFade>
          </section>

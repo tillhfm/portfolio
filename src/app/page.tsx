@@ -112,32 +112,50 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground">Klick auf Elemente für Google-Suche</p>
                </BlurFade>
                <BlurFade delay={1.5}>
-                  <div className="flex flex-col gap-4 [&>*]:flex [&>*]:flex-wrap [&>*]:gap-2 [&>*]:justify-start">
-                     <div>
-                        <Badge variant="secondary"><Code2 size="15px" />&nbsp;&nbsp;Sprachen</Badge>
-                        {DATA.skills.map((skill, id) => (
-                           <Link key={id} target="_blank" href={googleSearchLink(skill)}>
-                              <Badge key={id}>{skill}</Badge>
-                           </Link>
-                        ))}
-                     </div>
-                     <div>
-                        <Badge variant="secondary"><Package size="15px" />&nbsp;&nbsp;Frameworks</Badge>
-                        {DATA.frameworks.map((framework, id) => (
-                           <Link key={id} target="_blank" href={googleSearchLink(framework)}>
-                              <Badge key={id}>{framework}</Badge>
-                           </Link>
-                        ))}
-                     </div>
-                     <div>
-                        <Badge variant="secondary"><TerminalSquare size="15px" />&nbsp;&nbsp;Tools</Badge>
-                        {DATA.tools.map((tool, id) => (
-                           <Link key={id} target="_blank" href={googleSearchLink(tool)}>
-                              <Badge key={id}>{tool}</Badge>
-                           </Link>
-                        ))}
-                     </div>
-                  </div>
+                  <table>
+                     <tr>
+                        <td>
+                           <Badge variant="secondary" className="h-6 mr-4"><Code2 size="15px" />&nbsp;&nbsp;Sprachen</Badge>
+                        </td>
+                        <td>
+                           <div className="flex flex-wrap gap-x-1.5 my-3 gap-y-1">
+                              {DATA.skills.map((skill, id) => (
+                                 <Link key={id} target="_blank" href={googleSearchLink(skill)}>
+                                    <Badge key={id} className="h-6">{skill}</Badge>
+                                 </Link>
+                              ))}
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <Badge variant="secondary" className="h-6 mr-4"><Package size="15px" />&nbsp;&nbsp;Frameworks</Badge>
+                        </td>
+                        <td>
+                           <div className="flex flex-wrap gap-x-1.5 my-3 gap-y-1">
+                              {DATA.frameworks.map((framework, id) => (
+                                 <Link key={id} target="_blank" href={googleSearchLink(framework)}>
+                                    <Badge key={id} className="h-6">{framework}</Badge>
+                                 </Link>
+                              ))}
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <Badge variant="secondary" className="h-6 mr-4"><TerminalSquare size="15px" />&nbsp;&nbsp;Tools</Badge>
+                        </td>
+                        <td>
+                           <div className="flex flex-wrap gap-x-1.5 my-3 gap-y-1">
+                              {DATA.tools.map((tool, id) => (
+                                 <Link key={id} target="_blank" href={googleSearchLink(tool)}>
+                                    <Badge key={id} className="h-6">{tool}</Badge>
+                                 </Link>
+                              ))}
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
                </BlurFade>
             </div>
          </section>
@@ -149,7 +167,7 @@ export default function Home() {
                      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                         Kontakt
                      </h2>
-                     <p className="mx-auto max-w-[600px] text-muted-foreground sm:text-lg/relaxed md:text-xl/relaxed">
+                     <p className="pb-1 mx-auto max-w-[600px] text-base/snug text-muted-foreground sm:text-lg/relaxed md:text-xl/relaxed">
                         Kontaktiere mich via Email oder auch kostenlos per Telefon.
                      </p>
                      <div className="flex justify-center items-center space-x-3">

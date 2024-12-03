@@ -9,8 +9,8 @@ export const DATA: {
    phoneNumber: string;
    dateOfBirth: string;
    skills: string[];
-   currentWork: {
-      company: string,
+   experience: {
+      institution: string,
       references: {
          url: string;
          name: string;
@@ -20,19 +20,7 @@ export const DATA: {
       logoSrc: string,
       description: string,
       start: string,
-   }[];
-   pastWork: {
-      company: string,
-      references: {
-         url: string;
-         name: string;
-         icon: React.JSX.Element;
-      }[],
-      title: string,
-      logoSrc: string,
-      description: string,
-      start: string,
-      end: string,
+      end?: string,
    }[];
 } = {
    instagramUrl: "https://instagram.com/hm.till",
@@ -53,9 +41,9 @@ export const DATA: {
       "git",
       "Linux"
    ],
-   currentWork: [
+   experience: [
       {
-         company: "XIMA MEDIA GmbH",
+         institution: "XIMA MEDIA GmbH",
          references: [
             {
                url: "https://xima.de",
@@ -70,7 +58,7 @@ export const DATA: {
             "Junior-Softwareentwickler für Fullstack-Anwendungen in Java Enterprise Umgebungen.",
       },
       {
-         company: "SimpleCloud",
+         institution: "SimpleCloud",
          references: [
             {
                url: "https://simplecloud.app",
@@ -90,7 +78,7 @@ export const DATA: {
             "Mitwirkung an der Entwicklung der v3, Dokumentation und Eventplanung.",
       },
       {
-         company: "dreamsdontsleep",
+         institution: "dreamsdontsleep",
          references: [
             {
                url: "https://instagram.com/dreamsdontsleeep",
@@ -104,10 +92,8 @@ export const DATA: {
          description:
             "Systemadminitration und Leitung der Entwicklung einer React-Anwendung.",
       },
-   ],
-   pastWork: [
       {
-         company: "adesso SE",
+         institution: "adesso SE",
          references: [
             {
                url: "https://adesso.de",
@@ -123,7 +109,7 @@ export const DATA: {
             "Entwicklung einer Fullstack-Webapp mit SpringBoot und Thymeleaf.",
       },
       {
-         company: "Jeracraft.net",
+         institution: "Jeracraft.net",
          references: [
             {
                url: "https://www.youtube.com/@Jeracraft",
@@ -137,22 +123,6 @@ export const DATA: {
          end: "Jun. 2023",
          description:
             "Entwicklung und stellvertretende Leitung der Entwicklung am Minecraft Netzwerk des YouTubers Jeracraft.",
-      },
-      {
-         company: "LTI music Veranstaltungslogistik GmbH",
-         references: [
-            {
-               url: "https://lti-music.com",
-               name: "Webseite",
-               icon: <GlobeIcon className="size-4" />
-            }
-         ],
-         title: "Aushilfe Veranstaltungstechnik",
-         logoSrc: "/lti.svg",
-         start: "Jul. 2023",
-         end: "Aug. 2023",
-         description:
-            "Wartung & Logistik von Veranstaltungstechnik und Auf- & Abbau von Events.",
       },
    ],
 }

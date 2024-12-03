@@ -83,9 +83,9 @@ export default function Home() {
          <section id="current-work">
             <div className="flex min-h-0 flex-col gap-y-3">
                <BlurFade delay={1.3}>
-                  <h2 className="text-xl font-bold">Ich arbeite für</h2>
+                  <h2 className="text-xl font-bold">Arbeitserfahrung</h2>
                </BlurFade>
-               {DATA.currentWork.map((work, id) => (
+               {DATA.experience.map((work, id) => (
                   <BlurFade
                      key={id}
                      delay={1.45 + id * 0.08}
@@ -93,36 +93,11 @@ export default function Home() {
                      <ResumeCard
                         key={id}
                         logoUrl={work.logoSrc}
-                        altText={work.company}
-                        title={work.company}
+                        altText={work.institution}
+                        title={work.institution}
                         subtitle={work.title}
                         references={work.references}
-                        period={`${work.start} - Aktuell`}
-                        description={work.description}
-                     />
-                  </BlurFade>
-               ))}
-            </div>
-         </section>
-
-         <section id="current-work">
-            <div className="flex min-h-0 flex-col gap-y-3">
-               <BlurFade delay={1.6}>
-                  <h2 className="text-xl font-bold">Und hier habe ich mal gearbeitet</h2>
-               </BlurFade>
-               {DATA.pastWork.map((work, id) => (
-                  <BlurFade
-                     key={id}
-                     delay={1.75 + id * 0.08}
-                  >
-                     <ResumeCard
-                        key={id}
-                        logoUrl={work.logoSrc}
-                        altText={work.company}
-                        title={work.company}
-                        subtitle={work.title}
-                        references={work.references}
-                        period={`${work.start} - ${work.end}`}
+                        period={`${work.start} - ${work.end ? work.end : 'Aktuell'}`}
                         description={work.description}
                      />
                   </BlurFade>

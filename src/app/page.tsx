@@ -145,23 +145,22 @@ export default function Home() {
          <section id="contact">
             <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
                <BlurFade delay={1.6}>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                        Kontaktiere mich
+                        Kontakt
                      </h2>
-                     <div className="space-y-4 mx-auto max-w-[600px] text-muted-foreground sm:text-lg/relaxed md:text-xl/relaxed">
-                        <div>Kontaktiere mich via Email oder auch kostenlos per Telefon.</div>
-
-                        <div className="flex justify-center items-center space-x-3">
-                           <Dialog>
-                              <DialogTrigger asChild>
-                                 <Button className="flex items-center space-x-2">
-                                    <Mail className="size-4" /> <span>Kontaktdaten</span>
-                                 </Button>
-                              </DialogTrigger>
-                              <ContactDialog />
-                           </Dialog>
-                        </div>
+                     <p className="mx-auto max-w-[600px] text-muted-foreground sm:text-lg/relaxed md:text-xl/relaxed">
+                        Kontaktiere mich via Email oder auch kostenlos per Telefon.
+                     </p>
+                     <div className="flex justify-center items-center space-x-3">
+                        <Dialog>
+                           <DialogTrigger asChild>
+                              <Button className="flex items-center space-x-2">
+                                 <Mail className="size-4" /> <span>Kontaktdaten</span>
+                              </Button>
+                           </DialogTrigger>
+                           <ContactDialog />
+                        </Dialog>
                      </div>
                   </div>
                </BlurFade>

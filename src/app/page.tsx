@@ -185,17 +185,19 @@ export default function Home() {
             </div>
          </section>
          <section id="footer" className="pb-10">
-            <BlurFade delay={1.7} className="flex justify-center text-sm">
-               <span>
+            <BlurFade delay={1.7} className="flex flex-col items-center text-sm space-y-1">
+               <div>
                   Copyright © 2024,&nbsp;
                   <Link href="#" className="underline underline-offset-2 decoration-1 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
                      Till Hoffmann
                   </Link>
-                  &nbsp;&&nbsp;
+               </div>
+               <div>
+                  Inspired by&nbsp;
                   <Link href="https://dillion.io/" target="_blank" className="underline underline-offset-2 decoration-1 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
                      Dillion Verma
                   </Link>
-               </span>
+               </div>
             </BlurFade>
          </section>
       </main>

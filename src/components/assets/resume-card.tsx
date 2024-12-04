@@ -2,14 +2,12 @@
 
 import { Card, CardHeader } from "@/components/magicui/simpler-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ChevronRightIcon, Globe } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { DATA } from "@/data/data";
 
 interface ResumeCardProps {
    logoUrl: string;

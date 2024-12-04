@@ -10,8 +10,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import moment from 'moment'
 import { ResumeCard } from "@/components/assets/resume-card"
 import { Badge } from "@/components/ui/badge"
-import { Button, buttonVariants } from "@/components/ui/button"
-import { cn, googleSearchLink } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { googleSearchLink } from "@/lib/utils"
 
 export default function Home() {
    const age = moment().diff(moment(DATA.dateOfBirth, "YYYY/MM/DD"), "years")

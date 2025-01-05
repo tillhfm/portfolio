@@ -75,16 +75,21 @@ export const DATA: {
                icon: <GlobeIcon className="size-4" />
             },
             {
-               url: "https://github.com/theSimpleCloud",
+               url: "https://github.com/simplecloudapp",
                name: "Github",
                icon: <GithubIcon className="size-4" />
             },
+            {
+               url: "https://github.com/theSimpleCloud",
+               name: "Github (alt)",
+               icon: <GithubIcon className="size-4" />
+            },
          ],
-         title: "Softwareentwickler, Content-Designer (ehrenamtlich)",
+         title: "Maintainer (Softwareentwickler)",
          logoSrc: "/simplecloud.png",
          start: "Mai 2024",
          description:
-            "Mitwirkung an der Entwicklung der v3, Dokumentation und Eventplanung.",
+            "Mitwirkung an der Entwicklung und Dokumentation der v3.",
       },
       {
          institution: "dreamsdontsleep",
@@ -99,7 +104,7 @@ export const DATA: {
          logoSrc: "/dds.jpeg",
          start: "Jan. 2024",
          description:
-            "Systemadminitration und Leitung der Entwicklung einer React-Anwendung.",
+            "Systemadminitration und Leitung der Entwicklung von Java- und React-Anwendungen.",
       },
       {
          institution: "adesso SE",

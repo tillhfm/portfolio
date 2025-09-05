@@ -187,7 +187,7 @@ export default function Home() {
          <section id="footer" className="pb-10">
             <BlurFade delay={1.7} className="flex flex-col items-center text-sm space-y-1">
                <div>
-                  Copyright © 2024,&nbsp;
+                  Copyright © 2024-2025,&nbsp;
                   <Link href="#" className="underline underline-offset-2 decoration-1 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
                      Till Hoffmann
                   </Link>

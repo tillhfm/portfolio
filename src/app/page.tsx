@@ -62,7 +62,7 @@ export default function Home() {
                </div>
                <BlurFade delay={0.15}>
                   <Avatar className="size-[5.3rem] sm:size-32 border">
-                     <AvatarImage alt="Till Hoffmann" src="/me1.png" />
+                     <AvatarImage alt="Till Hoffmann" src="/me3.png" />
                      <AvatarFallback>TH</AvatarFallback>
                   </Avatar>
                </BlurFade>

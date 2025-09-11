@@ -67,6 +67,36 @@ export const DATA: {
             "Junior-Softwareentwickler für Fullstack-Anwendungen in Java Enterprise Umgebungen.",
       },
       {
+         institution: "nordtal.eu",
+         references: [
+            {
+               url: "https://www.nordtal.eu/",
+               name: "Webseite",
+               icon: <GlobeIcon className="size-4" />
+            }
+         ],
+         title: "Organisator, Entwickler & Administrator",
+         logoSrc: "/nordtal.png",
+         start: "Jan. 2024",
+         description:
+             "Der jährliche Minecraft-Server, auf dem jeder mitspielen darf - jedes Jahr aufwendiger.",
+      },
+      {
+         institution: "dreamsdontsleep",
+         references: [
+            {
+               url: "https://instagram.com/dreamsdontsleeep",
+               name: "Instagram",
+               icon: <InstagramIcon className="size-4" />
+            }
+         ],
+         title: "Fullstack-Entwickler & Systemadministrator",
+         logoSrc: "/dds.jpeg",
+         start: "Jan. 2024",
+         description:
+             "Systemadministration und Leitung der Entwicklung von Java- und React-Anwendungen.",
+      },
+      {
          institution: "SimpleCloud",
          references: [
             {
@@ -91,21 +121,6 @@ export const DATA: {
          end: "Feb. 2025",
          description:
             "Mitwirkung an der Entwicklung und Dokumentation der v3.",
-      },
-      {
-         institution: "dreamsdontsleep",
-         references: [
-            {
-               url: "https://instagram.com/dreamsdontsleeep",
-               name: "Instagram",
-               icon: <InstagramIcon className="size-4" />
-            }
-         ],
-         title: "Fullstack-Entwickler, Systemadministrator",
-         logoSrc: "/dds.jpeg",
-         start: "Jan. 2024",
-         description:
-            "Systemadministration und Leitung der Entwicklung von Java- und React-Anwendungen.",
       },
       {
          institution: "adesso SE",

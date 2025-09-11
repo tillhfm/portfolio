@@ -30,7 +30,6 @@ export const ResumeCard = ({
    title,
    subtitle,
    href,
-   badges,
    period,
    description,
    references,
@@ -52,7 +51,7 @@ export const ResumeCard = ({
       >
          <Card className="flex w-full">
             <div className="flex-none">
-               <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
+               <Avatar className="border size-10 m-auto bg-muted-background dark:bg-foreground">
                   <AvatarImage
                      src={logoUrl}
                      alt={altText}

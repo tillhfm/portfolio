@@ -88,6 +88,7 @@ export const DATA: {
          title: "Maintainer (Softwareentwickler)",
          logoSrc: "/simplecloud.png",
          start: "Mai 2024",
+         end: "Feb. 2025",
          description:
             "Mitwirkung an der Entwicklung und Dokumentation der v3.",
       },
@@ -100,11 +101,11 @@ export const DATA: {
                icon: <InstagramIcon className="size-4" />
             }
          ],
-         title: "Entwicklungsleiter, Systemadministrator",
+         title: "Fullstack-Entwickler, Systemadministrator",
          logoSrc: "/dds.jpeg",
          start: "Jan. 2024",
          description:
-            "Systemadminitration und Leitung der Entwicklung von Java- und React-Anwendungen.",
+            "Systemadministration und Leitung der Entwicklung von Java- und React-Anwendungen.",
       },
       {
          institution: "adesso SE",

@@ -36,7 +36,6 @@ export const DATA: {
       "TypeScript",
       "Python",
       "Kotlin",
-      "Go",
    ],
    frameworks: [
       "SpringBoot",
@@ -48,7 +47,8 @@ export const DATA: {
       "Docker",
       "git",
       "Linux",
-      "Jetbrains IDEs"
+      "Jetbrains IDEs",
+      "Cloudflare"
    ],
    experience: [
       {
@@ -65,6 +65,21 @@ export const DATA: {
          start: "Feb. 2024",
          description:
             "Junior-Softwareentwickler für Fullstack-Anwendungen in Java Enterprise Umgebungen.",
+         },
+         {
+            institution: "dreamsdontsleep",
+            references: [
+               {
+                  url: "https://instagram.com/dreamsdontsleeep",
+                  name: "Instagram",
+                  icon: <InstagramIcon className="size-4" />
+               }
+            ],
+            title: "Fullstack-Entwickler & Systemadministrator",
+            logoSrc: "/dds.jpeg",
+            start: "Jan. 2024",
+            description:
+                "Systemadministration und Entwicklung von Java- und React-Anwendungen.",
       },
       {
          institution: "nordtal.eu",
@@ -78,23 +93,9 @@ export const DATA: {
          title: "Organisator, Entwickler & Administrator",
          logoSrc: "/nordtal.png",
          start: "Jan. 2024",
+         end: "Pausiert",
          description:
              "Der jährliche Minecraft-Server, auf dem jeder mitspielen darf - jedes Jahr aufwendiger.",
-      },
-      {
-         institution: "dreamsdontsleep",
-         references: [
-            {
-               url: "https://instagram.com/dreamsdontsleeep",
-               name: "Instagram",
-               icon: <InstagramIcon className="size-4" />
-            }
-         ],
-         title: "Fullstack-Entwickler & Systemadministrator",
-         logoSrc: "/dds.jpeg",
-         start: "Jan. 2024",
-         description:
-             "Systemadministration und Leitung der Entwicklung von Java- und React-Anwendungen.",
       },
       {
          institution: "SimpleCloud",

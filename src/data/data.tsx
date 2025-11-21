@@ -40,15 +40,15 @@ export const DATA: {
    frameworks: [
       "SpringBoot",
       "JSF",
-      "React",
-      "Next.js",
+      "Next.js"
    ],
    tools: [
       "Docker",
       "git",
       "Linux",
       "Jetbrains IDEs",
-      "Cloudflare"
+      "Cloudflare",
+      "Jira"
    ],
    experience: [
       {
@@ -75,7 +75,7 @@ export const DATA: {
                   icon: <InstagramIcon className="size-4" />
                }
             ],
-            title: "Fullstack-Entwickler & Systemadministrator",
+            title: "Entwickler & Administrator",
             logoSrc: "/dds.jpeg",
             start: "Jan. 2024",
             description:
@@ -148,12 +148,12 @@ export const DATA: {
                icon: <YouTubeIcon className="size-4" />
             }
          ],
-         title: "Stellv. Entwicklungsleiter",
+         title: "Stellv. Entwicklungsleitung",
          logoSrc: "/jeracraft.jpg",
          start: "Dez. 2022",
          end: "Jun. 2023",
          description:
-            "Entwicklung und stellvertretende Leitung der Entwicklung am Minecraft Netzwerk des YouTubers Jeracraft.",
+            "Entwicklung und stellvertretende Leitung der Entwicklung an einem Minecraft Netzwerk mit Ø 200 zugleich aktiven Spielern.",
       },
    ],
 }

@@ -1,17 +1,16 @@
 import Link from "next/link"
-import React from "react"
 import { ArrowUpRight, Code2, Mail, Package, TerminalSquare } from "lucide-react"
 import { Dialog, DialogTrigger } from "@/components/ui/dialog"
 import ContactDialog from "@/components/assets/contact-dialog"
 import { GithubIcon, InstagramIcon } from "@/components/assets/icons"
 import { DATA } from "../data/data"
-import BlurFade from "@/components/magicui/blur-fade"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import moment from 'moment'
 import { ResumeCard } from "@/components/assets/resume-card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { googleSearchLink } from "@/lib/utils"
+import BlurFade from "@/components/magicui/blur-fade"
 
 export default function Home() {
    const age = moment().diff(moment(DATA.dateOfBirth, "YYYY/MM/DD"), "years")

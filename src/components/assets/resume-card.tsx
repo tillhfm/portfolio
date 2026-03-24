@@ -98,8 +98,8 @@ export const ResumeCard = ({
                   >
                      {description}
                      <div className="flex gap-x-3 w-full flex-wrap">
-                        {references && references.map((ref, x) => (
-                           <Button size="sm" key={x} variant="link" asChild className="mt-2" onClick={(e) => e.stopPropagation()}>
+                        {references?.map((ref) => (
+                           <Button size="sm" key={ref.url} variant="link" asChild className="mt-2" onClick={(e) => e.stopPropagation()}>
                               <Link href={ref.url} target="_blank" className="flex w-fit items-center space-x-1">
                                  {ref.icon} <span>{ref.name}</span>
                               </Link>

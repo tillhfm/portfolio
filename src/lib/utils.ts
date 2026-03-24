@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function googleSearchLink(query: string) {
-   return "https://google.com/search?q=" + query.replace(" ", "+")
+  return `https://google.com/search?q=${encodeURIComponent(query)}`
 }

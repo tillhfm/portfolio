@@ -19,9 +19,9 @@ const ContactDialog = () => {
 
    const handleCopy = async ( value: string, title: string) => {
       navigator.clipboard.writeText(value).then(() => {
-         toast({ title: title + " kopiert!", variant: "default",  })
+         toast({ title: `${title} kopiert!`, variant: "default",  })
       }).catch(() => {
-         toast({ title: "Kopieren fehlgeschlagen! (" + title + ")", variant: "destructive" })
+         toast({ title: `Kopieren fehlgeschlagen! (${title})`, variant: "destructive" })
       });
    };
 
@@ -36,7 +36,7 @@ const ContactDialog = () => {
                   Email
                </Label>
                <Link
-                  className={buttonVariants({ variant: "secondary" }) + " space-x-2"}
+                  className={`${buttonVariants({ variant: "secondary" })} space-x-2`}
                   id="email"
                   href={`mailto:${DATA.emailAddress}`}
                >
@@ -54,7 +54,7 @@ const ContactDialog = () => {
                   Telefon
                </Label>
                <Link
-                  className={buttonVariants({ variant: "secondary" }) + " space-x-2"}
+                  className={`${buttonVariants({ variant: "secondary" })} space-x-2`}
                   id="phone"
                   href={`tel:${DATA.phoneNumber.replaceAll(" ", "")}`}
                >

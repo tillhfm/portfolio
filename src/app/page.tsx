@@ -143,9 +143,11 @@ export default function Home() {
                </BlurFade>
                <BlurFade delay={BLUR_FADE_DELAY * 30}>
                   <table>
-                     <SkillRow icon={Code2} label="Sprachen" items={DATA.skills} />
-                     <SkillRow icon={Package} label="Frameworks" items={DATA.frameworks} />
-                     <SkillRow icon={TerminalSquare} label="Tools" items={DATA.tools} />
+                     <tbody>
+                        <SkillRow icon={Code2} label="Sprachen" items={DATA.skills} />
+                        <SkillRow icon={Package} label="Frameworks" items={DATA.frameworks} />
+                        <SkillRow icon={TerminalSquare} label="Tools" items={DATA.tools} />
+                     </tbody>
                   </table>
                </BlurFade>
             </div>

@@ -57,7 +57,7 @@ export const DATA: {
             {
                url: "https://xima.de",
                name: "Webseite",
-               icon: <GlobeIcon className="size-4" />
+               icon: <GlobeIcon className="size-4" />,
             },
          ],
          title: "Jr.-Softwareentwickler (Festanstellung)",
@@ -72,7 +72,7 @@ export const DATA: {
                {
                   url: "https://instagram.com/dreamsdontsleeep",
                   name: "Instagram",
-                  icon: <InstagramIcon className="size-4" />
+                  icon: <InstagramIcon className="size-4" />,
                }
             ],
             title: "Entwickler & Administrator",
@@ -87,7 +87,7 @@ export const DATA: {
             {
                url: "https://www.nordtal.eu/",
                name: "Webseite",
-               icon: <GlobeIcon className="size-4" />
+               icon: <GlobeIcon className="size-4" />,
             }
          ],
          title: "Organisator, Entwickler & Administrator",
@@ -103,17 +103,17 @@ export const DATA: {
             {
                url: "https://simplecloud.app",
                name: "Webseite",
-               icon: <GlobeIcon className="size-4" />
+               icon: <GlobeIcon className="size-4" />,
             },
             {
                url: "https://github.com/simplecloudapp",
                name: "Github",
-               icon: <GithubIcon className="size-4" />
+               icon: <GithubIcon className="size-4" />,
             },
             {
                url: "https://github.com/theSimpleCloud",
                name: "Github (alt)",
-               icon: <GithubIcon className="size-4" />
+               icon: <GithubIcon className="size-4" />,
             },
          ],
          title: "Maintainer (Softwareentwickler)",
@@ -129,7 +129,7 @@ export const DATA: {
             {
                url: "https://adesso.de",
                name: "Webseite",
-               icon: <GlobeIcon className="size-4" />
+               icon: <GlobeIcon className="size-4" />,
             }
          ],
          title: "Praktikant (Softwareentwickler)",
@@ -145,7 +145,7 @@ export const DATA: {
             {
                url: "https://www.youtube.com/@Jeracraft",
                name: "YouTube",
-               icon: <YouTubeIcon className="size-4" />
+               icon: <YouTubeIcon className="size-4" />,
             }
          ],
          title: "Stellv. Entwicklungsleitung",

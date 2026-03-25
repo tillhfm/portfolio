@@ -12,6 +12,7 @@ import {
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useToast } from "@/components/ui/use-toast"
+import { cn } from "@/lib/utils"
 import { DATA } from "../../data/data"
 
 const ContactDialog = () => {
@@ -36,7 +37,7 @@ const ContactDialog = () => {
                   Email
                </Label>
                <Link
-                  className={`${buttonVariants({ variant: "secondary" })} space-x-2`}
+                  className={cn(buttonVariants({ variant: "secondary" }), "space-x-2")}
                   id="email"
                   href={`mailto:${DATA.emailAddress}`}
                >
@@ -54,7 +55,7 @@ const ContactDialog = () => {
                   Telefon
                </Label>
                <Link
-                  className={`${buttonVariants({ variant: "secondary" })} space-x-2`}
+                  className={cn(buttonVariants({ variant: "secondary" }), "space-x-2")}
                   id="phone"
                   href={`tel:${DATA.phoneNumber.replaceAll(" ", "")}`}
                >

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from "@/lib/utils"
+import { ErrorBoundary } from "@/components/error-boundary"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -47,7 +48,7 @@ export default function RootLayout({
                inter.className
             )}
          >
-            <div className="max-w-2xl h-full w-full">{children}</div>
+            <div className="max-w-2xl h-full w-full"><ErrorBoundary>{children}</ErrorBoundary></div>
             <Toaster />
          </body>
       </html>

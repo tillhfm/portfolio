@@ -8,15 +8,31 @@ import { ErrorBoundary } from "@/components/error-boundary"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-   title: "Till Hoffmann — tillhfm.de",
-   description: "Portfolio von Till Hoffmann aus Dresden.",
+   metadataBase: new URL("https://tillhfm.de"),
+   title: "Till Hoffmann — Jr.-Softwareentwickler aus Dresden | Portfolio",
+   description:
+      "Portfolio von Till Hoffmann, Junior-Softwareentwickler bei XIMA MEDIA GmbH in Dresden. " +
+      "Erfahrung in Java, TypeScript, Python, Kotlin, SpringBoot und Next.js.",
+   alternates: {
+      canonical: "https://tillhfm.de",
+   },
    openGraph: {
-      title: "Till Hoffmann — tillhfm.de",
-      description: "Portfolio von Till Hoffmann aus Dresden.",
-      url: "https://tillhfm.de/",
-      siteName: "Till Hoffmann — tillhfm.de",
+      title: "Till Hoffmann — Jr.-Softwareentwickler aus Dresden",
+      description:
+         "Portfolio von Till Hoffmann, Junior-Softwareentwickler bei XIMA MEDIA GmbH in Dresden. " +
+         "Erfahrung in Java, TypeScript, Python, Kotlin, SpringBoot und Next.js.",
+      url: "https://tillhfm.de",
+      siteName: "Till Hoffmann — Portfolio",
       locale: "de_DE",
       type: "website",
+      images: [
+         {
+            url: "/opengraph-image",
+            width: 1200,
+            height: 630,
+            alt: "Till Hoffmann — Jr.-Softwareentwickler aus Dresden",
+         },
+      ],
    },
    robots: {
       index: true,
@@ -30,8 +46,9 @@ export const metadata: Metadata = {
       },
    },
    twitter: {
-      title: "Till Hoffmann — tillhfm.de",
+      title: "Till Hoffmann — Jr.-Softwareentwickler aus Dresden",
       card: "summary_large_image",
+      images: ["/opengraph-image"],
    },
 }
 
@@ -41,7 +58,7 @@ export default function RootLayout({
    children: React.ReactNode
 }>) {
    return (
-      <html lang="en" suppressHydrationWarning>
+      <html lang="de" suppressHydrationWarning>
          <body
             className={cn(
                "min-h-screen bg-background antialiased !px-6 flex justify-center",

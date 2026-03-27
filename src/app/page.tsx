@@ -30,20 +30,16 @@ function SkillRow({ icon: Icon, label, items }: {
    items: string[];
 }) {
    return (
-      <tr>
-         <td>
-            <Badge variant="secondary" className="h-6 mr-4"><Icon size="15px" />&nbsp;&nbsp;{label}</Badge>
-         </td>
-         <td>
-            <div className="flex flex-wrap gap-x-1.5 my-3 gap-y-1">
-               {items.map((item, id) => (
-                  <Link key={id} target="_blank" href={googleSearchLink(item)}>
-                     <Badge className="h-6">{item}</Badge>
-                  </Link>
-               ))}
-            </div>
-         </td>
-      </tr>
+      <div className="flex flex-wrap items-start gap-x-4 my-1">
+         <Badge variant="secondary" className="h-6 flex-shrink-0"><Icon size="15px" />&nbsp;&nbsp;{label}</Badge>
+         <div className="flex flex-wrap gap-x-1.5 gap-y-1">
+            {items.map((item, id) => (
+               <Link key={id} target="_blank" href={googleSearchLink(item)}>
+                  <Badge className="h-6">{item}</Badge>
+               </Link>
+            ))}
+         </div>
+      </div>
    )
 }
 
@@ -52,6 +48,39 @@ export default function Home() {
 
    return (
       <main className="flex flex-col min-h-[100dvh] space-y-12">
+         <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+               __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Person",
+                  name: "Till Hoffmann",
+                  url: "https://tillhfm.de",
+                  image: "https://tillhfm.de/me.jpg",
+                  jobTitle: "Junior-Softwareentwickler",
+                  worksFor: {
+                     "@type": "Organization",
+                     name: "XIMA MEDIA GmbH",
+                     url: "https://xima.de",
+                  },
+                  address: {
+                     "@type": "PostalAddress",
+                     addressLocality: "Dresden",
+                     addressRegion: "Sachsen",
+                     addressCountry: "DE",
+                  },
+                  sameAs: [
+                     "https://github.com/tillhfm",
+                     "https://instagram.com/hm.till",
+                  ],
+                  knowsAbout: [
+                     "Java", "TypeScript", "Python", "Kotlin",
+                     "SpringBoot", "Next.js", "Docker", "Linux",
+                  ],
+                  email: "mailto:hallo@tillhfm.de",
+               }),
+            }}
+         />
          <section id="header" className="">
             <div className="flex justify-end space-x-6 pt-10 sm:pt-12">
                <BlurFade delay={BLUR_FADE_DELAY * 23}>
@@ -142,13 +171,11 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground">Klick auf Elemente für Google-Suche</p>
                </BlurFade>
                <BlurFade delay={BLUR_FADE_DELAY * 30}>
-                  <table>
-                     <tbody>
-                        <SkillRow icon={Code2} label="Sprachen" items={DATA.skills} />
-                        <SkillRow icon={Package} label="Frameworks" items={DATA.frameworks} />
-                        <SkillRow icon={TerminalSquare} label="Tools" items={DATA.tools} />
-                     </tbody>
-                  </table>
+                  <div className="flex flex-col gap-y-1">
+                     <SkillRow icon={Code2} label="Sprachen" items={DATA.skills} />
+                     <SkillRow icon={Package} label="Frameworks" items={DATA.frameworks} />
+                     <SkillRow icon={TerminalSquare} label="Tools" items={DATA.tools} />
+                  </div>
                </BlurFade>
             </div>
          </section>
@@ -178,9 +205,7 @@ export default function Home() {
             <BlurFade delay={BLUR_FADE_DELAY * 34} className="flex flex-col items-center text-sm space-y-1">
                <div>
                   Copyright © 2024-2026,&nbsp;
-                  <Link href="#" className="underline underline-offset-2 decoration-1 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                     Till Hoffmann
-                  </Link>
+Till Hoffmann
                </div>
                <div>
                   Inspired by&nbsp;

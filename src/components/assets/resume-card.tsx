@@ -9,6 +9,14 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 
+/**
+ * Props for {@link ResumeCard}.
+ * @property href - Navigation target. When `description` is provided, click is
+ *   intercepted and the card expands instead of navigating.
+ * @property description - When present, activates expand/collapse behaviour.
+ * @property references - External links shown inside the expanded panel.
+ * @property altText - Alt text for the logo; first character used as avatar fallback.
+ */
 interface ResumeCardProps {
    logoUrl: string;
    altText: string;
@@ -24,6 +32,13 @@ interface ResumeCardProps {
       icon: React.JSX.Element;
    }[];
 }
+/**
+ * Work-experience card with an avatar logo on the left.
+ * When `description` is provided, clicking prevents default navigation and instead
+ * toggles an animated panel (Framer Motion height 0 → "auto") showing the description
+ * and reference links. The chevron rotates 90° when expanded.
+ * Reference buttons call `e.stopPropagation()` so clicking them doesn't collapse the card.
+ */
 export const ResumeCard = ({
    logoUrl,
    altText,
@@ -36,6 +51,7 @@ export const ResumeCard = ({
 }: ResumeCardProps) => {
    const [isExpanded, setIsExpanded] = React.useState(false);
 
+   /** Intercepts link navigation when a description exists, toggling expand state instead. */
    const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
       if (description) {
          e.preventDefault();

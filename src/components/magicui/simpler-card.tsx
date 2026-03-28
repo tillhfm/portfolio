@@ -26,7 +26,7 @@ CardHeader.displayName = "CardHeader";
 
 /** `h3` heading with semibold weight and tight letter-spacing. */
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
+  HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
   <h3

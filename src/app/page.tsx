@@ -13,8 +13,15 @@ import { googleSearchLink } from "@/lib/utils"
 import BlurFade from "@/components/magicui/blur-fade"
 import type React from "react"
 
+/** Base delay unit (seconds) for staggered BlurFade animations. Each section
+ *  multiplies this by an integer so content fades in top-to-bottom in sequence. */
 const BLUR_FADE_DELAY = 0.05
 
+/**
+ * Composes a Radix Dialog + DialogTrigger + ContactDialog so any element can
+ * open the contact sheet without repeating the Dialog boilerplate.
+ * @param children - Element rendered as the dialog trigger (must accept a ref).
+ */
 function ContactDialogWrapper({ children }: { children: React.ReactNode }) {
    return (
       <Dialog>
@@ -24,6 +31,12 @@ function ContactDialogWrapper({ children }: { children: React.ReactNode }) {
    )
 }
 
+/**
+ * Labelled row of skill badges, each linking to a Google search via {@link googleSearchLink}.
+ * @param icon - Lucide icon used as the category indicator.
+ * @param label - Category label shown in a secondary badge beside the icon.
+ * @param items - Skill names to render as individual linked badges.
+ */
 function SkillRow({ icon: Icon, label, items }: {
    icon: React.ComponentType<{ size?: string | number }>;
    label: string;
@@ -43,6 +56,14 @@ function SkillRow({ icon: Icon, label, items }: {
    )
 }
 
+/**
+ * Root portfolio page.
+ * Age is computed at render time with `date-fns` `differenceInYears` against
+ * `DATA.dateOfBirth` (slashes replaced with hyphens to produce a valid Date string).
+ * Injects Schema.org `Person` JSON-LD via `dangerouslySetInnerHTML` because Next.js
+ * does not support `<script>` with dynamic content as JSX literals.
+ * All sections are staggered using multiples of {@link BLUR_FADE_DELAY}.
+ */
 export default function Home() {
    const age = differenceInYears(new Date(), new Date(DATA.dateOfBirth.replace(/\//g, "-")))
 

@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
+/** Root card container with rounded corners and card background colour. Forwards ref to the underlying div. */
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -14,6 +15,7 @@ const Card = React.forwardRef<
 ));
 Card.displayName = "Card";
 
+/** Flexible column layout area at the top of a {@link Card} for title/subtitle content. */
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -22,6 +24,7 @@ const CardHeader = React.forwardRef<
 ));
 CardHeader.displayName = "CardHeader";
 
+/** `h3` heading with semibold weight and tight letter-spacing. */
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
@@ -37,6 +40,7 @@ const CardTitle = React.forwardRef<
 ));
 CardTitle.displayName = "CardTitle";
 
+/** Secondary text at small size in the muted foreground colour. */
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
@@ -49,6 +53,7 @@ const CardDescription = React.forwardRef<
 ));
 CardDescription.displayName = "CardDescription";
 
+/** Main body area; `text-pretty` prevents awkward line breaks in short paragraphs. */
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -64,6 +69,7 @@ const CardContent = React.forwardRef<
 ));
 CardContent.displayName = "CardContent";
 
+/** Horizontally aligned footer row, typically used for action buttons. */
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

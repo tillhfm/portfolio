@@ -15,9 +15,20 @@ import { useToast } from "@/components/ui/use-toast"
 import { cn } from "@/lib/utils"
 import { DATA } from "../../data/data"
 
+/**
+ * Radix UI dialog content with email and phone contact options.
+ * `onOpenAutoFocus` is suppressed to prevent the dialog stealing focus from the trigger.
+ * The phone `tel:` href uses the number with spaces stripped; the same stripped value
+ * is copied to clipboard so the OS dialler receives a clean digit string.
+ */
 const ContactDialog = () => {
    const { toast } = useToast();
 
+   /**
+    * Copies `value` to the system clipboard and shows a toast notification.
+    * @param value - String to write to the clipboard.
+    * @param title - Label used in the toast (e.g. "Email-Adresse").
+    */
    const handleCopy = async ( value: string, title: string) => {
       navigator.clipboard.writeText(value).then(() => {
          toast({ title: `${title} kopiert!`, variant: "default",  })

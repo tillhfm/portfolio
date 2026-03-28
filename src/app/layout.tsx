@@ -7,6 +7,12 @@ import { ErrorBoundary } from "@/components/error-boundary"
 
 const inter = Inter({ subsets: ["latin"] })
 
+/**
+ * Static Next.js metadata for all routes. `metadataBase` resolves relative
+ * image paths in Open Graph / Twitter cards against the production domain.
+ * Configures a 1200×630 OG image, Twitter large-image card, and permissive
+ * robots rules.
+ */
 export const metadata: Metadata = {
    metadataBase: new URL("https://tillhfm.de"),
    title: "Till Hoffmann — Jr.-Softwareentwickler aus Dresden | Portfolio",
@@ -52,6 +58,11 @@ export const metadata: Metadata = {
    },
 }
 
+/**
+ * Root layout applied to every route. Wraps children in an {@link ErrorBoundary}
+ * so rendering errors show a localised fallback instead of a blank page.
+ * Centres content in a `max-w-2xl` container for readability on wide viewports.
+ */
 export default function RootLayout({
    children,
 }: Readonly<{

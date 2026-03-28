@@ -1,5 +1,6 @@
 import type React from "react"
 
+/** Instagram logo as inline SVG. Fill uses `currentColor`; accepts any SVGElement HTML attributes including `className`. */
 export function InstagramIcon(props: React.HTMLAttributes<SVGElement>) {
    return (
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -8,6 +9,7 @@ export function InstagramIcon(props: React.HTMLAttributes<SVGElement>) {
    )
 }
 
+/** GitHub mark (Invertocat) as inline SVG. Fill uses `currentColor`. */
 export function GithubIcon(props: React.HTMLAttributes<SVGElement>) {
    return (
       <svg viewBox="0 0 438.549 438.549" {...props}>
@@ -16,6 +18,7 @@ export function GithubIcon(props: React.HTMLAttributes<SVGElement>) {
    )
 }
 
+/** YouTube play-button logo as inline SVG. Fill uses `currentColor`. */
 export function YouTubeIcon(props: React.HTMLAttributes<SVGElement>) {
    return (
       <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props}>

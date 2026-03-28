@@ -11,6 +11,17 @@ import {
 
 type MarginType = UseInViewOptions["margin"];
 
+/**
+ * Props for the {@link BlurFade} animation wrapper.
+ * @property duration - Animation duration in seconds. Default: 0.4.
+ * @property delay - Extra delay in seconds on top of the 0.04 s base offset. Default: 0.
+ * @property yOffset - Vertical translation in pixels for the hidden→visible transition. Default: 6.
+ * @property inView - When `false` (default), fires immediately on mount.
+ *   Set `true` to defer until the element scrolls into view.
+ * @property variant - Custom Framer Motion variants replacing the default effect.
+ *   When provided, `yOffset` and `blur` are ignored.
+ * @property blur - CSS blur radius in the hidden state. Default: "6px".
+ */
 interface BlurFadeProps {
   children: React.ReactNode;
   className?: string;
@@ -26,6 +37,12 @@ interface BlurFadeProps {
   blur?: string;
 }
 
+/**
+ * Animates children with a combined blur, fade, and vertical slide via Framer Motion.
+ * Total delay is `0.04 + delay` s — the 0.04 s base prevents the animation firing
+ * synchronously with paint. When `inView` is `true`, animation is held until
+ * `useInView` reports the element has entered the viewport (triggers once only).
+ */
 export default function BlurFade({
   children,
   className,

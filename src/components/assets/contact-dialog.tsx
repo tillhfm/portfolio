@@ -11,19 +11,17 @@ import {
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
-import { useToast } from "@/components/ui/use-toast"
+import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 import { DATA } from "../../data/data"
 
 /**
- * Radix UI dialog content with email and phone contact options.
- * `onOpenAutoFocus` is suppressed to prevent the dialog stealing focus from the trigger.
+ * Base UI dialog content with email and phone contact options.
+ * Focus handling is delegated to Base UI's default Dialog behaviour.
  * The phone `tel:` href uses the number with spaces stripped; the same stripped value
  * is copied to clipboard so the OS dialler receives a clean digit string.
  */
 const ContactDialog = () => {
-   const { toast } = useToast();
-
    /**
     * Copies `value` to the system clipboard and shows a toast notification.
     * @param value - String to write to the clipboard.
@@ -31,14 +29,14 @@ const ContactDialog = () => {
     */
    const handleCopy = async ( value: string, title: string) => {
       navigator.clipboard.writeText(value).then(() => {
-         toast({ title: `${title} kopiert!`, variant: "default",  })
+         toast.success(`${title} kopiert!`)
       }).catch(() => {
-         toast({ title: `Kopieren fehlgeschlagen! (${title})`, variant: "destructive" })
+         toast.error(`Kopieren fehlgeschlagen! (${title})`)
       });
    };
 
    return (
-      <DialogContent className="sm:max-w-md" onOpenAutoFocus={(e) => e.preventDefault()}>
+      <DialogContent className="sm:max-w-md">
          <DialogHeader>
             <DialogTitle>Kontaktiere mich via</DialogTitle>
          </DialogHeader>
@@ -79,10 +77,8 @@ const ContactDialog = () => {
             </Button>
          </div>
          <DialogFooter className="sm:justify-start">
-            <DialogClose asChild>
-               <Button type="button" variant="secondary">
-                  Erledigt 🤝
-               </Button>
+            <DialogClose render={<Button type="button" variant="secondary" />}>
+               Erledigt 🤝
             </DialogClose>
          </DialogFooter>
       </DialogContent>

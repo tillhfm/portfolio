@@ -8,7 +8,3 @@ export function cn(...inputs: ClassValue[]) {
 export function googleSearchLink(term: string) {
   return `https://www.google.com/search?q=${encodeURIComponent(term)}`
 }
-
-export function googleSearchLink(term: string) {
-  return `https://www.google.com/search?q=${encodeURIComponent(term)}`
-}

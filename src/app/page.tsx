@@ -123,10 +123,11 @@ export default function Home() {
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 17}>
                             <ContactDialogWrapper>
-                        <span
-                            className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
+                        <button
+                            type="button"
+                            className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors cursor-pointer">
                            <Mail className="size-4"/> <span>Kontakt</span>
-                        </span>
+                        </button>
                             </ContactDialogWrapper>
                         </BlurFade>
                     </div>
@@ -154,7 +155,7 @@ export default function Home() {
                     <BlurFade delay={BLUR_FADE_DELAY * 3}>
                         <div
                             className="size-[5.3rem] sm:size-32 border rounded-full overflow-hidden relative flex-shrink-0">
-                            <Image src="/me.jpg" alt="Till Hoffmann" fill className="object-cover" priority/>
+                            <Image src="/me.jpg" alt="Till Hoffmann" fill sizes="(min-width: 640px) 128px, 85px" className="object-cover" priority/>
                         </div>
                     </BlurFade>
                 </div>

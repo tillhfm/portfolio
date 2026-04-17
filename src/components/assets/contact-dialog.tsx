@@ -16,8 +16,8 @@ import { cn } from "@/lib/utils"
 import { DATA } from "../../data/data"
 
 /**
- * Radix UI dialog content with email and phone contact options.
- * `onOpenAutoFocus` is suppressed to prevent the dialog stealing focus from the trigger.
+ * Base UI dialog content with email and phone contact options.
+ * Focus handling is delegated to Base UI's default Dialog behaviour.
  * The phone `tel:` href uses the number with spaces stripped; the same stripped value
  * is copied to clipboard so the OS dialler receives a clean digit string.
  */

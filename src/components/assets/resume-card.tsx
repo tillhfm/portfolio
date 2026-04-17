@@ -116,7 +116,7 @@ export const ResumeCard = ({
                      <div className="flex gap-x-3 w-full flex-wrap">
                         {references?.map((ref) => (
                            <Button size="sm" key={ref.url} variant="link" className="mt-2 flex items-center space-x-1"
-                              onClick={(e) => { e.stopPropagation(); window.open(ref.url, '_blank', 'noopener,noreferrer'); }}
+                              onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(ref.url, '_blank', 'noopener,noreferrer'); }}
                            >
                               {ref.icon} <span>{ref.name}</span>
                            </Button>

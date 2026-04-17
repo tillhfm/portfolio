@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter, Geist } from "next/font/google"
+import { Geist } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "@/components/ui/sonner"
 import { cn } from "@/lib/utils"
@@ -7,8 +7,6 @@ import { ErrorBoundary } from "@/components/error-boundary"
 import { Providers } from "@/components/providers"
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const inter = Inter({ subsets: ["latin"] })
 
 /**
  * Static Next.js metadata for all routes. `metadataBase` resolves relative
@@ -76,7 +74,7 @@ export default function RootLayout({
          <body
             className={cn(
                "min-h-screen bg-background antialiased !px-6 flex justify-center",
-               inter.className
+               geist.className
             )}
          >
             <Providers>

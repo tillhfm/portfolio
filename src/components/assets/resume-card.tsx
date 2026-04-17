@@ -65,9 +65,9 @@ export const ResumeCard = ({
          className="block cursor-pointer w-full"
          onClick={handleClick}
       >
-         <Card className="flex w-full">
+         <Card className="flex w-full bg-transparent">
             <div className="flex-none">
-               <Avatar className="border size-10 m-auto bg-muted-background dark:bg-foreground">
+               <Avatar className="border dark:border-white/20 size-10 m-auto bg-muted-background dark:bg-white">
                   <AvatarImage
                      src={logoUrl}
                      alt={altText}
@@ -115,10 +115,10 @@ export const ResumeCard = ({
                      {description}
                      <div className="flex gap-x-3 w-full flex-wrap">
                         {references?.map((ref) => (
-                           <Button size="sm" key={ref.url} variant="link" asChild className="mt-2" onClick={(e) => e.stopPropagation()}>
-                              <Link href={ref.url} target="_blank" className="flex w-fit items-center space-x-1">
-                                 {ref.icon} <span>{ref.name}</span>
-                              </Link>
+                           <Button size="sm" key={ref.url} variant="link" className="mt-2 flex items-center space-x-1"
+                              onClick={(e) => { e.stopPropagation(); window.open(ref.url, '_blank', 'noopener,noreferrer'); }}
+                           >
+                              {ref.icon} <span>{ref.name}</span>
                            </Button>
                         ))}
                      </div>

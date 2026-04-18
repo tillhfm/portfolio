@@ -3,8 +3,6 @@ import React from "react";
 
 /**
  * Central portfolio data store.
- * `dateOfBirth` uses `YYYY/MM/DD` (slash-separated) — consumers must replace
- * `/` with `-` before passing to `new Date()` (as done in {@link Home}).
  * Experience entries without an `end` value are treated as ongoing; the page
  * renders "Aktuell" in their place.
  */
@@ -15,7 +13,7 @@ export const DATA: {
     emailAddress: string;
     phoneNumber: string;
     dateOfBirth: Date;
-    skills: {categoryName: string, categoryIcon: React.JSX.Element, items: string[]}[];
+    skills: { categoryName: string, categoryIcon: React.JSX.Element, items: string[] }[];
     experience: {
         institution: string,
         references: {

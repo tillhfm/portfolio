@@ -1,11 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
-import {differenceInYears} from "date-fns"
 import {ArrowUpRight, Mail} from "lucide-react"
 import {Dialog, DialogTrigger} from "@/components/ui/dialog"
 import ContactDialog from "@/components/assets/contact-dialog"
 import {GithubIcon, InstagramIcon} from "@/components/assets/icons"
-import {DATA} from "../data/data"
+import {DATA} from "@/data/data"
 import {ResumeCard} from "@/components/assets/resume-card"
 import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
@@ -69,8 +68,6 @@ function SkillRow({icon, label, items}: {
  * All sections are staggered using multiples of {@link BLUR_FADE_DELAY}.
  */
 export default function Home() {
-    const age = differenceInYears(new Date(), DATA.dateOfBirth)
-
     return (
         <main className="flex flex-col min-h-[100dvh] space-y-12">
             <script

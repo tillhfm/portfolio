@@ -11,6 +11,7 @@ import {googleSearchLink} from "@/lib/utils"
 import BlurFade from "@/components/magicui/blur-fade"
 import {ThemeToggle} from "@/components/assets/theme-toggle"
 import {CurrentYear} from "@/components/assets/current-year"
+import {WavingHand} from "@/components/assets/waving-hand"
 import {cn} from "@/lib/utils"
 import type React from "react"
 
@@ -96,13 +97,13 @@ export default function Home() {
                         <BlurFade delay={BLUR_FADE_DELAY * 23}>
                             <Link href={DATA.githubUrl} target="_blank"
                                   className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                                <GithubIcon className="size-3 sm:size-4"/> <span className="text-xs sm:text-sm">Github</span>
+                                <GithubIcon className="size-3.5"/> <span className="text-sm">Github</span>
                             </Link>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 20}>
                             <Link href={DATA.instagramUrl} target="_blank"
                                   className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                                <InstagramIcon className="size-3 sm:size-4"/> <span className="text-xs sm:text-sm">Instagram</span>
+                                <InstagramIcon className="size-3.5"/> <span className="text-sm">Instagram</span>
                             </Link>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 17}>
@@ -117,7 +118,7 @@ export default function Home() {
                     <div className="flex-col flex flex-1 space-y-1.5">
                         <BlurFade delay={BLUR_FADE_DELAY * 3} className="">
                             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-2">
-                                Hey, ich bin Till 👋
+                                Hey, ich bin Till <WavingHand/>
                             </h1>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 9} className="">

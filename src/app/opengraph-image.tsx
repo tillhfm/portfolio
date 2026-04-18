@@ -27,6 +27,7 @@ export default async function Image() {
             >
                 <img
                     src={photoBase64}
+                    alt="Profilfoto"
                     width={200}
                     height={200}
                     style={{borderRadius: "100px", objectFit: "cover"}}

@@ -3,7 +3,6 @@
 import {Copy, Mail, Phone} from "lucide-react"
 import {Button, buttonVariants} from "@/components/ui/button"
 import {DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle,} from "@/components/ui/dialog"
-import {Label} from "@/components/ui/label"
 import Link from "next/link"
 import {toast} from "sonner"
 import {cn} from "@/lib/utils"
@@ -36,18 +35,15 @@ const ContactDialog = () => {
             </DialogHeader>
             <div className="flex items-end space-x-2">
                 <div className="grid flex-1 gap-2">
-                    <Label htmlFor="email" className="">
-                        Email
-                    </Label>
+                    <div className="text-sm font-medium">Email</div>
                     <Link
                         className={cn(buttonVariants({variant: "secondary"}), "space-x-2")}
-                        id="email"
                         href={`mailto:${DATA.emailAddress}`}
                     >
                         <Mail className="h-4 w-4"/> <span>{DATA.emailAddress}</span>
                     </Link>
                 </div>
-                <Button type="submit" size="icon" variant="default"
+                <Button type="button" size="icon" variant="default"
                         onClick={() => handleCopy(DATA.emailAddress, 'Email-Adresse')} className="px-3">
                     <span className="sr-only">Email-Adresse Kopieren</span>
                     <Copy className="h-4 w-4"/>
@@ -55,18 +51,15 @@ const ContactDialog = () => {
             </div>
             <div className="flex items-end space-x-2">
                 <div className="grid flex-1 gap-2">
-                    <Label htmlFor="phone" className="">
-                        Telefon
-                    </Label>
+                    <div className="text-sm font-medium">Telefon</div>
                     <Link
                         className={cn(buttonVariants({variant: "secondary"}), "space-x-2")}
-                        id="phone"
                         href={`tel:${DATA.phoneNumber.replaceAll(" ", "")}`}
                     >
                         <Phone className="h-4 w-4"/> <span>{DATA.phoneNumber}</span>
                     </Link>
                 </div>
-                <Button type="submit" size="icon" variant="default"
+                <Button type="button" size="icon" variant="default"
                         onClick={() => handleCopy(DATA.phoneNumber.replaceAll(" ", ""), 'Telefonnummer')}
                         className="px-3">
                     <span className="sr-only">Telefonnummer Kopieren</span>

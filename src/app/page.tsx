@@ -11,6 +11,7 @@ import {Button} from "@/components/ui/button"
 import {googleSearchLink} from "@/lib/utils"
 import BlurFade from "@/components/magicui/blur-fade"
 import {ThemeToggle} from "@/components/assets/theme-toggle"
+import {CopyrightYear} from "@/components/assets/copyright-year"
 import type React from "react"
 
 /** Base delay unit (seconds) for staggered BlurFade animations. Each section
@@ -61,8 +62,6 @@ function SkillRow({icon, label, items}: {
 
 /**
  * Root portfolio page.
- * Age is computed at render time with `date-fns` `differenceInYears` against
- * `DATA.dateOfBirth` (slashes replaced with hyphens to produce a valid Date string).
  * Injects Schema.org `Person` JSON-LD via `dangerouslySetInnerHTML` because Next.js
  * does not support `<script>` with dynamic content as JSX literals.
  * All sections are staggered using multiples of {@link BLUR_FADE_DELAY}.
@@ -246,7 +245,7 @@ export default function Home() {
             <section id="footer" className="pb-10">
                 <BlurFade delay={BLUR_FADE_DELAY * 34} className="flex flex-col items-center text-sm space-y-1">
                     <div>
-                        Copyright © 2024-{new Date().getFullYear()}, Till Hoffmann
+                        Copyright © 2024-<CopyrightYear/>, Till Hoffmann
                     </div>
                 </BlurFade>
             </section>

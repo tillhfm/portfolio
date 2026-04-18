@@ -11,7 +11,6 @@ because it only aims to attract German visitors.
 - **Next.js** - as the base framework
 - **Tailwind CSS** - for easier styling
 - **shadcn/ui** and **magicui** - for ready-to-use React components
-- **momentjs** - for date calculations
 
 ## Data
 

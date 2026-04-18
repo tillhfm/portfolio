@@ -16,8 +16,8 @@ export function ContactNavLink() {
                 <button
                     type="button"
                     className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors cursor-pointer">
-                    <Mail className="size-3 sm:size-4" />
-                    <span className="text-xs sm:text-sm">Kontakt</span>
+                    <Mail className="size-3.5" />
+                    <span className="text-sm">Kontakt</span>
                 </button>
             }
         />

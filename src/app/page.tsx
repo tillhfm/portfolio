@@ -97,13 +97,13 @@ export default function Home() {
                         <BlurFade delay={BLUR_FADE_DELAY * 23}>
                             <Link href={DATA.githubUrl} target="_blank"
                                   className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                                <GithubIcon className="size-3 sm:size-4"/> <span className="text-xs sm:text-sm">Github</span>
+                                <GithubIcon className="size-3.5"/> <span className="text-sm">Github</span>
                             </Link>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 20}>
                             <Link href={DATA.instagramUrl} target="_blank"
                                   className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                                <InstagramIcon className="size-3 sm:size-4"/> <span className="text-xs sm:text-sm">Instagram</span>
+                                <InstagramIcon className="size-3.5"/> <span className="text-sm">Instagram</span>
                             </Link>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 17}>

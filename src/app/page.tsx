@@ -1,17 +1,17 @@
 import Link from "next/link"
 import Image from "next/image"
-import {differenceInYears} from "date-fns"
-import {ArrowUpRight, Code2, Mail, Package, TerminalSquare} from "lucide-react"
+import {ArrowUpRight, Mail} from "lucide-react"
 import {Dialog, DialogTrigger} from "@/components/ui/dialog"
 import ContactDialog from "@/components/assets/contact-dialog"
 import {GithubIcon, InstagramIcon} from "@/components/assets/icons"
-import {DATA} from "../data/data"
+import {DATA} from "@/data/data"
 import {ResumeCard} from "@/components/assets/resume-card"
 import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
 import {googleSearchLink} from "@/lib/utils"
 import BlurFade from "@/components/magicui/blur-fade"
 import {ThemeToggle} from "@/components/assets/theme-toggle"
+import {CopyrightYear} from "@/components/assets/copyright-year"
 import type React from "react"
 
 /** Base delay unit (seconds) for staggered BlurFade animations. Each section
@@ -23,13 +23,13 @@ const BLUR_FADE_DELAY = 0.05
  * open the contact sheet without repeating the Dialog boilerplate.
  * @param children - Element rendered as the dialog trigger (must accept a ref).
  */
-function ContactDialogWrapper({ children }: { children: React.ReactElement }) {
-   return (
-      <Dialog>
-         <DialogTrigger render={children} />
-         <ContactDialog />
-      </Dialog>
-   )
+function ContactDialogWrapper({children}: { children: React.ReactElement }) {
+    return (
+        <Dialog>
+            <DialogTrigger render={children}/>
+            <ContactDialog/>
+        </Dialog>
+    )
 }
 
 /**
@@ -38,15 +38,18 @@ function ContactDialogWrapper({ children }: { children: React.ReactElement }) {
  * @param label - Category label shown in a secondary badge beside the icon.
  * @param items - Skill names to render as individual linked badges.
  */
-function SkillRow({icon: Icon, label, items}: {
-    icon: React.ComponentType<{ size?: string | number }>;
+function SkillRow({icon, label, items}: {
+    icon: React.JSX.Element;
     label: string;
     items: string[];
 }) {
     return (
         <div className="flex flex-wrap items-start gap-x-4 my-1">
             <div className="flex flex-wrap gap-x-1.5 gap-y-1">
-                <Badge variant="secondary" className="h-6 flex-shrink-0"><Icon size="15px"/>&nbsp;&nbsp;{label}</Badge>
+                <Badge variant="secondary" className="h-6 flex-shrink-0 gap-x-2">
+                    <span className="[&>*]:h-3.5 [&>*]:w-3.5">{icon}</span>
+                    <span>{label}</span>
+                </Badge>
                 {items.map((item, id) => (
                     <Link key={id} target="_blank" href={googleSearchLink(item)}>
                         <Badge className="h-6">{item}</Badge>
@@ -59,15 +62,11 @@ function SkillRow({icon: Icon, label, items}: {
 
 /**
  * Root portfolio page.
- * Age is computed at render time with `date-fns` `differenceInYears` against
- * `DATA.dateOfBirth` (slashes replaced with hyphens to produce a valid Date string).
  * Injects Schema.org `Person` JSON-LD via `dangerouslySetInnerHTML` because Next.js
  * does not support `<script>` with dynamic content as JSX literals.
  * All sections are staggered using multiples of {@link BLUR_FADE_DELAY}.
  */
 export default function Home() {
-    const age = differenceInYears(new Date(), new Date(DATA.dateOfBirth.replace(/\//g, "-")))
-
     return (
         <main className="flex flex-col min-h-[100dvh] space-y-12">
             <script
@@ -77,13 +76,13 @@ export default function Home() {
                         "@context": "https://schema.org",
                         "@type": "Person",
                         name: "Till Hoffmann",
-                        url: "https://tillhfm.de",
+                        url: DATA.websiteUrl,
                         image: "https://tillhfm.de/me.jpg",
-                        jobTitle: "Junior-Softwareentwickler",
+                        jobTitle: "Junior-Softwareentwickler Fullstack",
                         worksFor: {
                             "@type": "Organization",
-                            name: "XIMA MEDIA GmbH",
-                            url: "https://xima.de",
+                            name: DATA.experience[0].institution,
+                            url: DATA.experience[0].references[0].url,
                         },
                         address: {
                             "@type": "PostalAddress",
@@ -92,14 +91,13 @@ export default function Home() {
                             addressCountry: "DE",
                         },
                         sameAs: [
-                            "https://github.com/tillhfm",
-                            "https://instagram.com/hm.till",
+                            DATA.githubUrl,
+                            DATA.instagramUrl,
                         ],
                         knowsAbout: [
-                            "Java", "TypeScript", "Python", "Kotlin",
-                            "SpringBoot", "Next.js", "Docker", "Linux",
+                            ...DATA.skills.flatMap((category) => category.items),
                         ],
-                        email: "mailto:hallo@tillhfm.de",
+                        email: `mailto:${DATA.emailAddress}`,
                     }),
                 }}
             />
@@ -123,11 +121,11 @@ export default function Home() {
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 17}>
                             <ContactDialogWrapper>
-                        <button
-                            type="button"
-                            className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors cursor-pointer">
-                           <Mail className="size-4"/> <span>Kontakt</span>
-                        </button>
+                                <button
+                                    type="button"
+                                    className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors cursor-pointer">
+                                    <Mail className="size-4"/> <span>Kontakt</span>
+                                </button>
                             </ContactDialogWrapper>
                         </BlurFade>
                     </div>
@@ -155,7 +153,8 @@ export default function Home() {
                     <BlurFade delay={BLUR_FADE_DELAY * 3}>
                         <div
                             className="size-[5.3rem] sm:size-32 border rounded-full overflow-hidden relative flex-shrink-0">
-                            <Image src="/me.jpg" alt="Till Hoffmann" fill sizes="(min-width: 640px) 128px, 85px" className="object-cover" priority/>
+                            <Image src="/me.jpg" alt="Till Hoffmann" fill sizes="(min-width: 640px) 128px, 85px"
+                                   className="object-cover" priority/>
                         </div>
                     </BlurFade>
                 </div>
@@ -167,11 +166,13 @@ export default function Home() {
                 </BlurFade>
                 <BlurFade delay={BLUR_FADE_DELAY * 13}>
                     <p className="mt-1 prose max-w-full text-pretty font-sans text-muted-foreground dark:prose-invert">
-                        Im Alter von ca. 12 Jahren habe ich angefangen, an Minecraft-Mehrspielerservern zu arbeiten,
-                        woraus sich meine Liebe zur Informatik entwickelte. Mittlerweile bin ich in vielen Feldern
-                        dieser erfahren. Nebenbei mache ich Musik, beschäftige mich mit händischer Modeherstellung und
-                        arbeite an verschiedenen Projekten, während ich mein Abitur mache. Aktuell bin ich {age} Jahre
-                        alt.
+                        Mit ca. 12 Jahren habe ich durch das Computerspiel Minecraft angefangen zu programmieren –
+                        seitdem habe ich mir selbstständig ein breites Wissen in der IT angeeignet, von
+                        Softwareentwicklung über Systemadministration bis hin zu Hardware. Seit der 11. Klasse besuche
+                        ich das Gymnasium Dresden-Pieschen, um Informatik als Leistungskurs im Abitur zu belegen und im
+                        Herbst 2026 beginnt mein duales Informatik-Studium. In meiner Freizeit arbeite ich an
+                        verschiedenen eigenen Projekten, darunter z.B. dieses Portfolio oder eine moderne ÖPNV-App für
+                        Dresden, mit der ich momentan beginne.
                     </p>
                 </BlurFade>
             </section>
@@ -180,6 +181,7 @@ export default function Home() {
                 <div className="flex min-h-0 flex-col gap-y-3">
                     <BlurFade delay={BLUR_FADE_DELAY * 15}>
                         <h2 className="text-xl font-bold">Arbeitserfahrung</h2>
+                        <p className="text-sm text-muted-foreground">Klicke auf Elemente für Details</p>
                     </BlurFade>
                     {DATA.experience.map((work, id) => (
                         <BlurFade
@@ -205,13 +207,15 @@ export default function Home() {
                 <div className="flex min-h-0 flex-col gap-y-3">
                     <BlurFade delay={BLUR_FADE_DELAY * 28}>
                         <h2 className="text-xl font-bold">Skills</h2>
-                        <p className="text-sm text-muted-foreground">Klick auf Elemente für Google-Suche</p>
+                        <p className="text-sm text-muted-foreground">Klicke auf Elemente für Google-Suche</p>
                     </BlurFade>
                     <BlurFade delay={BLUR_FADE_DELAY * 30}>
                         <div className="flex flex-col gap-y-1">
-                            <SkillRow icon={Code2} label="Sprachen" items={DATA.skills}/>
-                            <SkillRow icon={Package} label="Frameworks" items={DATA.frameworks}/>
-                            <SkillRow icon={TerminalSquare} label="Tools" items={DATA.tools}/>
+                            {DATA.skills.map((category, i) => (
+                                <SkillRow key={i} icon={category.categoryIcon}
+                                          label={category.categoryName}
+                                          items={category.items}/>
+                            ))}
                         </div>
                     </BlurFade>
                 </div>
@@ -225,7 +229,7 @@ export default function Home() {
                                 Kontakt
                             </h2>
                             <p className="pb-1 mx-auto max-w-[600px] text-base/snug text-muted-foreground sm:text-lg/relaxed md:text-xl/relaxed">
-                                Kontaktiere mich via Email oder auch kostenlos per Telefon.
+                                Kontaktiere mich via Email oder auch per Telefon.
                             </p>
                             <div className="flex justify-center items-center space-x-3">
                                 <ContactDialogWrapper>
@@ -241,15 +245,7 @@ export default function Home() {
             <section id="footer" className="pb-10">
                 <BlurFade delay={BLUR_FADE_DELAY * 34} className="flex flex-col items-center text-sm space-y-1">
                     <div>
-                        Copyright © 2024-2026,&nbsp;
-                        Till Hoffmann
-                    </div>
-                    <div>
-                        Inspired by&nbsp;
-                        <Link href="https://dillion.io/" target="_blank"
-                              className="underline underline-offset-2 decoration-1 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                            Dillion Verma
-                        </Link>
+                        Copyright © 2024-<CopyrightYear/>, Till Hoffmann
                     </div>
                 </BlurFade>
             </section>

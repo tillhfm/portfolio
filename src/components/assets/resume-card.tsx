@@ -70,7 +70,7 @@ export const ResumeCard = ({
                 </Avatar>
             </div>
             <div className="flex-grow ml-4 items-center flex-col group w-full">
-                <CardHeader className="w-full">
+                <CardHeader className="w-full h-9 justify-between">
                     <div className="flex items-center justify-between gap-x-2 text-base w-full overflow-hidden">
                         <div className="flex items-center w-[48%] sm:w-[65%]">
                             <h3 className="flex items-center font-semibold leading-none text-xs sm:text-sm max-w-[90%]">

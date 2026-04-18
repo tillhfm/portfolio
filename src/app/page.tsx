@@ -7,11 +7,12 @@ import {GithubIcon, InstagramIcon} from "@/components/assets/icons"
 import {DATA} from "@/data/data"
 import {ResumeCard} from "@/components/assets/resume-card"
 import {Badge} from "@/components/ui/badge"
-import {Button} from "@/components/ui/button"
+import {Button, buttonVariants} from "@/components/ui/button"
 import {googleSearchLink} from "@/lib/utils"
 import BlurFade from "@/components/magicui/blur-fade"
 import {ThemeToggle} from "@/components/assets/theme-toggle"
-import {CopyrightYear} from "@/components/assets/copyright-year"
+import {CurrentYear} from "@/components/assets/current-year"
+import {cn} from "@/lib/utils"
 import type React from "react"
 
 /** Base delay unit (seconds) for staggered BlurFade animations. Each section
@@ -44,12 +45,12 @@ function SkillRow({icon, label, items}: {
     items: string[];
 }) {
     return (
-        <div className="flex flex-wrap items-start gap-x-4 my-1">
+        <div className="flex gap-x-4 my-1">
+            <Badge variant="secondary" className="h-6 flex-shrink-0 gap-x-2">
+                <span className="[&>*]:h-3.5 [&>*]:w-3.5">{icon}</span>
+                <span>{label}</span>
+            </Badge>
             <div className="flex flex-wrap gap-x-1.5 gap-y-1">
-                <Badge variant="secondary" className="h-6 flex-shrink-0 gap-x-2">
-                    <span className="[&>*]:h-3.5 [&>*]:w-3.5">{icon}</span>
-                    <span>{label}</span>
-                </Badge>
                 {items.map((item, id) => (
                     <Link key={id} target="_blank" href={googleSearchLink(item)}>
                         <Badge className="h-6">{item}</Badge>
@@ -68,7 +69,7 @@ function SkillRow({icon, label, items}: {
  */
 export default function Home() {
     return (
-        <main className="flex flex-col min-h-[100dvh] space-y-12">
+        <main className="flex flex-col min-h-[100dvh] space-y-8">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -102,7 +103,7 @@ export default function Home() {
                 }}
             />
             <section id="header" className="">
-                <div className="flex justify-between items-center pt-10 sm:pt-12">
+                <div className="flex justify-between items-center pt-0 sm:pt-12">
                     <BlurFade delay={BLUR_FADE_DELAY * 14}>
                         <ThemeToggle/>
                     </BlurFade>
@@ -141,7 +142,7 @@ export default function Home() {
                             </h1>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 9} className="">
-                            <p className="max-w-[280px] sm:max-w-[400px] sm:text-xl">
+                            <p className="max-w-[280px] sm:max-w-[380px] sm:text-xl">
                                 Jr.-Softwareentwickler und Abiturient aus&nbsp;
                                 <Link href="https://maps.app.goo.gl/vFse1x3xYQm23W2u5" target="_blank"
                                       className="inline-block w-fit bg-secondary pr-1 rounded items-center">
@@ -162,10 +163,10 @@ export default function Home() {
 
             <section id="about">
                 <BlurFade delay={BLUR_FADE_DELAY * 11}>
-                    <h2 className="text-xl font-bold">Kurzbiografie</h2>
+                    <h2 className="text-xl font-bold">Kurz zu mir..</h2>
                 </BlurFade>
                 <BlurFade delay={BLUR_FADE_DELAY * 13}>
-                    <p className="mt-1 prose max-w-full text-pretty font-sans text-muted-foreground dark:prose-invert">
+                    <p className="mt-1 prose max-w-full text-pretty font-sans text-sm sm:text-base text-muted-foreground dark:prose-invert">
                         Mit ca. 12 Jahren habe ich durch das Computerspiel Minecraft angefangen zu programmieren –
                         seitdem habe ich mir selbstständig ein breites Wissen in der IT angeeignet, von
                         Softwareentwicklung über Systemadministration bis hin zu Hardware. Seit der 11. Klasse besuche
@@ -222,7 +223,7 @@ export default function Home() {
             </section>
 
             <section id="contact">
-                <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+                <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-6 sm:py-12">
                     <BlurFade delay={BLUR_FADE_DELAY * 32}>
                         <div className="space-y-2">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -242,10 +243,11 @@ export default function Home() {
                     </BlurFade>
                 </div>
             </section>
+
             <section id="footer" className="pb-10">
                 <BlurFade delay={BLUR_FADE_DELAY * 34} className="flex flex-col items-center text-sm space-y-1">
                     <div>
-                        Copyright © 2024-<CopyrightYear/>, Till Hoffmann
+                        Copyright © 2024-<CurrentYear/>, Till Hoffmann
                     </div>
                 </BlurFade>
             </section>

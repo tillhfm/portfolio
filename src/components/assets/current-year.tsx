@@ -1,5 +1,5 @@
 "use client"
 
-export function CopyrightYear() {
+export function CurrentYear() {
     return <>{new Date().getFullYear()}</>
 }

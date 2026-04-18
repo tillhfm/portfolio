@@ -38,7 +38,7 @@ function SkillRow({icon, label, items}: {
             </Badge>
             <div className="flex flex-wrap gap-x-1.5 gap-y-1">
                 {items.map((item, id) => (
-                    <Link key={id} target="_blank" href={googleSearchLink(item)}>
+                    <Link key={id} target="_blank" href={googleSearchLink(`${item} Programmiersprache`)}>
                         <Badge className="h-6">{item}</Badge>
                     </Link>
                 ))}

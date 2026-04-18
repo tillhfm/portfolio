@@ -146,12 +146,12 @@ export default function Home() {
                     <h2 className="text-xl font-bold">Kurz zu mir..</h2>
                 </BlurFade>
                 <BlurFade delay={BLUR_FADE_DELAY * 13}>
-                    <p className="mt-1 prose max-w-full text-pretty font-sans text-sm sm:text-base text-muted-foreground dark:prose-invert">
+                    <p className="mt-1 prose max-w-full text-pretty font-sans text-sm sm:text-base text-muted-foreground dark:prose-invert [&>b]:font-semibold">
                         Mit ca. 12 Jahren habe ich durch das Computerspiel Minecraft angefangen zu programmieren –
-                        seitdem habe ich mir selbstständig ein breites Wissen in der IT angeeignet, von
-                        Softwareentwicklung über Systemadministration bis hin zu Hardware. Seit der 11. Klasse besuche
-                        ich das Gymnasium Dresden-Pieschen, um Informatik als Leistungskurs im Abitur zu belegen und im
-                        Herbst 2026 beginnt mein duales Informatik-Studium. In meiner Freizeit arbeite ich an
+                        seitdem habe ich mir selbstständig ein breites Wissen in der IT angeeignet,
+                        von <b>Softwareentwicklung</b> über <b>Systemadministration</b> bis hin zu Hardware. Seit der 11. Klasse besuche
+                        ich das Gymnasium Dresden-Pieschen, um <b>Informatik als Leistungskurs im Abitur</b> zu belegen und im
+                        Herbst 2026 beginnt mein <b>duales Informatik-Studium</b>. In meiner Freizeit arbeite ich an
                         verschiedenen eigenen Projekten, darunter z.B. dieses Portfolio oder eine moderne ÖPNV-App für
                         Dresden, mit der ich momentan beginne.
                     </p>

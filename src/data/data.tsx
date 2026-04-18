@@ -61,7 +61,7 @@ export const DATA: {
             logoSrc: "/xima.jpg",
             start: "Feb. 2024",
             description:
-                "Junior-Fullstack-Softwareentwickler für Java und React Apps im öffentlichen Sektor. Ursprünglich als geringfügige Beschäftigung seit der 10. Klasse, ab  09/26 als Duales Studium. ",
+                "Junior-Fullstack-Softwareentwickler für Java und React Apps im öffentlichen Sektor. Seit der 10. Klasse als geringfügige Beschäftigung neben der Schule, ab  Herbst '26 als Duales Studium.",
         },
         {
             institution: "adesso SE",

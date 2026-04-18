@@ -1,8 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
-import {ArrowUpRight, Mail} from "lucide-react"
-import {Dialog, DialogTrigger} from "@/components/ui/dialog"
-import ContactDialog from "@/components/assets/contact-dialog"
+import {ArrowUpRight} from "lucide-react"
+import {ContactNavLink, ContactSectionButton} from "@/components/assets/contact-dialog-wrapper"
 import {GithubIcon, InstagramIcon} from "@/components/assets/icons"
 import {DATA} from "@/data/data"
 import {ResumeCard} from "@/components/assets/resume-card"
@@ -18,20 +17,6 @@ import type React from "react"
 /** Base delay unit (seconds) for staggered BlurFade animations. Each section
  *  multiplies this by an integer so content fades in top-to-bottom in sequence. */
 const BLUR_FADE_DELAY = 0.05
-
-/**
- * Composes a Radix Dialog + DialogTrigger + ContactDialog so any element can
- * open the contact sheet without repeating the Dialog boilerplate.
- * @param children - Element rendered as the dialog trigger (must accept a ref).
- */
-function ContactDialogWrapper({children}: { children: React.ReactElement }) {
-    return (
-        <Dialog>
-            <DialogTrigger render={children}/>
-            <ContactDialog/>
-        </Dialog>
-    )
-}
 
 /**
  * Labelled row of skill badges, each linking to a Google search via {@link googleSearchLink}.
@@ -111,23 +96,17 @@ export default function Home() {
                         <BlurFade delay={BLUR_FADE_DELAY * 23}>
                             <Link href={DATA.githubUrl} target="_blank"
                                   className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                                <GithubIcon className="size-4"/> <span>Github</span>
+                                <GithubIcon className="size-3 sm:size-4"/> <span className="text-xs sm:text-sm">Github</span>
                             </Link>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 20}>
                             <Link href={DATA.instagramUrl} target="_blank"
                                   className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors">
-                                <InstagramIcon className="size-4"/> <span>Instagram</span>
+                                <InstagramIcon className="size-3 sm:size-4"/> <span className="text-xs sm:text-sm">Instagram</span>
                             </Link>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY * 17}>
-                            <ContactDialogWrapper>
-                                <button
-                                    type="button"
-                                    className="flex items-center space-x-2 underline underline-offset-2 decoration-2 decoration-transparent hover:decoration-zinc-950 hover:transition-colors cursor-pointer">
-                                    <Mail className="size-4"/> <span>Kontakt</span>
-                                </button>
-                            </ContactDialogWrapper>
+                            <ContactNavLink />
                         </BlurFade>
                     </div>
                 </div>
@@ -233,11 +212,7 @@ export default function Home() {
                                 Kontaktiere mich via Email oder auch per Telefon.
                             </p>
                             <div className="flex justify-center items-center space-x-3">
-                                <ContactDialogWrapper>
-                                    <Button className="flex items-center space-x-2">
-                                        <Mail className="size-4"/> <span>Kontaktdaten</span>
-                                    </Button>
-                                </ContactDialogWrapper>
+                                <ContactSectionButton />
                             </div>
                         </div>
                     </BlurFade>
